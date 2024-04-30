@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Page Adjustments</title>
+    <style>
+        /* 1. Table with black border, change color on hover */
+        table {
+            border: 1px solid black; /* Black border for table */
+        }
+        table:hover {
+            background-color: lightgray; /* Change background color on hover */
+        }
+
+        /* 2. Visibility and Display */
+        .hidden-element {
+            visibility: hidden; /* Hide element but it still occupies space */
+        }
+        .visible-element {
+            visibility: visible; /* Show element */
+        }
+        .collapsed-element {
+            visibility: collapse; /* Collapse element like table rows or columns */
+        }
+
+        /* Different types of display */
+        .none-element {
+            display: none; /* Hide element and remove from document flow */
+        }
+        .inline-element {
+            display: inline; /* Display as inline element */
+        }
+        .block-element {
+            display: block; /* Display as block element */
+        }
+        .contents-element {
+            display: contents; /* Insert children into parent's place */
+        }
+        .list-item-element {
+            display: list-item; /* Display as list item */
+        }
+
+        /* 3. Scroll to Top/Bottom Links */
+        .scroll-link {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* 4. Padding and Margin */
+        .padding-example {
+            padding: 20px; /* Apply padding */
+        }
+        .margin-example {
+            margin: 20px; /* Apply margin */
+        }
+
+        /* 5. Multiple Background Images */
+        .background-example {
+            background-image: url('background1.jpg'), url('background2.jpg'); /* Multiple background images */
+            background-size: auto, cover; /* Set sizes for background images */
+            background-repeat: no-repeat;
+            background-position: top left, bottom right; /* Set positions for background images */
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. Table with border -->
+    <table>
+        <tr>
+            <td>Cell 1</td>
+            <td>Cell 2</td>
+        </tr>
+    </table>
+
+    <!-- 2. Visibility and Display -->
+    <div class="hidden-element">Hidden Element</div>
+    <div class="visible-element">Visible Element</div>
+    <table class="collapsed-element">
+        <tr>
+            <td>Collapsed Cell</td>
+        </tr>
+    </table>
+
+    <!-- Different types of display -->
+    <div class="none-element">None Element</div>
+    <span class="inline-element">Inline Element</span>
+    <div class="block-element">Block Element</div>
+    <div class="contents-element">
+        <div>Contents Element</div>
+        <div>Child 1</div>
+        <div>Child 2</div>
+    </div>
+    <ul class="list-item-element">
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+    </ul>
+
+    <!-- 3. Scroll Links -->
+    <a href="#top" class="scroll-link">Click to go to top of page</a>
+    <a href="#bottom" class="scroll-link">Click to go to bottom of page</a>
+    <div style="height: 2000px;"></div> <!-- Long page content -->
+    <a id="top"></a> <!-- Anchor for top of page -->
+    <a id="bottom"></a> <!-- Anchor for bottom of page -->
+
+    <!-- 4. Padding and Margin -->
+    <div class="padding-example">Padding Example</div>
+    <div class="margin-example">Margin Example</div>
+
+    <!-- 5. Multiple Background Images -->
+    <div class="background-example" style="height: 200px;"></div>
+</body>
+</html>

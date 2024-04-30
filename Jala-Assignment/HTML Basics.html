@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics HTML Page</title>
+    <style>
+        /* CSS for pseudo classes and elements */
+        a:hover {
+            color: red;
+        }
+
+        p::first-line {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Heading 1</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#section1">Section 1</a></li>
+            <li><a href="#section2">Section 2</a></li>
+            <li><a href="#section3">Section 3</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="section1">
+            <h2>Section 1</h2>
+            <p>This is a paragraph.</p>
+            <p>This is another paragraph with <em>italic</em> text.</p>
+            <p>This is another paragraph with <strong>bold</strong> text.</p>
+            <p>This is a paragraph with a <a href="#">link</a>.</p>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+            <label for="input1">Input Label</label>
+            <input type="text" id="input1">
+        </section>
+        
+        <section id="section2">
+            <h2>Section 2</h2>
+            <blockquote>This is a blockquote.</blockquote>
+            <hr>
+            <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        </section>
+        
+        <section id="section3">
+            <h2>Section 3</h2>
+            <div>This is a division.</div>
+            <span>This is a span.</span>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MyWebsite</p>
+    </footer>
+</body>
+</html>

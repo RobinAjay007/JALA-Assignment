@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events</title>
+</head>
+<body>
+    <!-- 1. Button to Display Current Date and Time -->
+    <button id="date-time-btn">Show Date & Time</button>
+    <p id="date-time"></p>
+    <script>
+        // Add event listener to the button
+        document.getElementById('date-time-btn').addEventListener('click', function() {
+            // Get current date and time
+            const dateTime = new Date().toLocaleString();
+            // Display it in the paragraph
+            document.getElementById('date-time').textContent = `Current Date & Time: ${dateTime}`;
+        });
+    </script>
+
+    <!-- 2. JavaScript Validation -->
+    <form id="validation-form">
+        <label for="text-input">Enter Text:</label>
+        <input type="text" id="text-input" required>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        // Add event listener to form submission
+        document.getElementById('validation-form').addEventListener('submit', function(event) {
+            const textInput = document.getElementById('text-input').value;
+            if (!textInput) {
+                alert('Text input cannot be empty!');
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+    </script>
+
+    <!-- 3. Debugging with console.log() -->
+    <script>
+        // Example for debugging
+        let x = 5;
+        let y = 3;
+        console.log('Before addition: x =', x, 'y =', y);
+        let sum = x + y;
+        console.log('After addition: sum =', sum);
+    </script>
+
+    <!-- 4. Cookie Functions -->
+    <script>
+        // Function to set a cookie
+        function setCookie(name, value, days) {
+            let expires = '';
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = '; expires=' + date.toUTCString();
+            }
+            document.cookie = name + '=' + value + expires + '; path=/';
+        }
+
+        // Function to get a cookie value
+        function getCookie(name) {
+            const nameEQ = name + '=';
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                let cookie = cookies[i];
+                while (cookie.charAt(0) === ' ') {
+                    cookie = cookie.substring(1, cookie.length);
+                }
+                if (cookie.indexOf(nameEQ) === 0) {
+                    return cookie.substring(nameEQ.length, cookie.length);
+                }
+            }
+            return null;
+        }
+
+        // Function to check if a cookie exists
+        function checkCookie(name) {
+            const cookie = getCookie(name);
+            if (cookie) {
+                console.log(`Cookie ${name} exists with value: ${cookie}`);
+            } else {
+                console.log(`Cookie ${name} does not exist.`);
+            }
+        }
+
+        // Example usage
+        setCookie('testCookie', '123', 1); // Set cookie
+        console.log('Retrieved cookie:', getCookie('testCookie')); // Get cookie
+        checkCookie('testCookie'); // Check cookie
+    </script>
+
+    <!-- 5. JSON Object Access -->
+    <script>
+        // Create a JSON object
+        const person = {
+            firstName: 'John',
+            lastName: 'Doe',
+            age: 30,
+            email: 'john@example.com'
+        };
+
+        // Access it using dot notation
+        console.log('First Name:', person.firstName);
+        console.log('Last Name:', person.lastName);
+        console.log('Age:', person.age);
+        console.log('Email:', person.email);
+    </script>
+</body>
+</html>

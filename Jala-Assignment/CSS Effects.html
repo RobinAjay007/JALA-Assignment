@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Effects and Animations</title>
+    <style>
+        /* 1. CSS shadow effects */
+        .image-box {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+            transition: box-shadow 0.3s ease; /* Add transition effect */
+        }
+        .image-box:hover {
+            cursor: pointer; /* Change cursor on hover */
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.7); /* Change shadow on hover */
+        }
+
+        /* 2. CSS animations */
+        .animation-example {
+            animation-name: example; /* Name of the animation */
+            animation-duration: 2s; /* Duration of the animation */
+            animation-iteration-count: infinite; /* Number of times the animation should repeat */
+            animation-delay: 1s; /* Delay before the animation starts */
+        }
+        @keyframes example {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* 3. Positions */
+        .static-example {
+            position: static; /* Default position */
+        }
+        .relative-example {
+            position: relative; /* Relative to its normal position */
+        }
+        .fixed-example {
+            position: fixed; /* Relative to the viewport */
+            top: 0;
+            right: 0;
+        }
+        .absolute-example {
+            position: absolute; /* Relative to the nearest positioned ancestor */
+            top: 50px;
+            left: 50px;
+        }
+        .sticky-example {
+            position: sticky; /* Based on user's scroll position */
+            top: 0;
+        }
+
+        /* 4. Handling Overflow */
+        .overflow-example {
+            width: 200px;
+            height: 100px;
+            overflow: scroll; /* Add scroll bar */
+        }
+
+        /* 5. Adding Opacity */
+        .opacity-example {
+            opacity: 0.5; /* Set opacity to 50% */
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. CSS shadow effects -->
+    <img src="image.jpg" alt="Image" class="image-box">
+
+    <!-- 2. CSS animations -->
+    <div class="animation-example">Animated Element</div>
+
+    <!-- 3. Positions -->
+    <div class="static-example">Static Position</div>
+    <div class="relative-example" style="top: 50px; left: 50px;">Relative Position</div>
+    <div class="fixed-example">Fixed Position</div>
+    <div class="absolute-example">Absolute Position</div>
+    <div style="height: 2000px;">Scroll down to see sticky position</div>
+    <div class="sticky-example">Sticky Position</div>
+
+    <!-- 4. Handling Overflow -->
+    <div class="overflow-example">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida tincidunt ultricies.</p>
+    </div>
+
+    <!-- 5. Adding Opacity -->
+    <img src="image.jpg" alt="Image" class="opacity-example">
+</body>
+</html>

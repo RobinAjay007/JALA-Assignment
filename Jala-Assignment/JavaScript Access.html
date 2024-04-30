@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Access and Properties</title>
+</head>
+<body>
+    <!-- 1. Disappear Button -->
+    <button onclick="this.style.display = 'none'">Click to Disappear</button>
+
+    <!-- 2. Call and Apply -->
+    <p id="call-apply-result">Result will appear here</p>
+    <script>
+        function displayResult(message) {
+            document.getElementById('call-apply-result').textContent = message;
+        }
+
+        // Define a function to invoke
+        function greet(name) {
+            return `Hello, ${name}!`;
+        }
+
+        // Call and Apply
+        displayResult(greet.call(null, 'John')); // Using call
+        displayResult(greet.apply(null, ['Jane'])); // Using apply
+    </script>
+
+    <!-- 3. Counter with onClick event -->
+    <p id="counter-value">0</p>
+    <button onclick="incrementCounter()">Count</button>
+    <script>
+        let counter = 0;
+
+        function incrementCounter() {
+            counter++;
+            document.getElementById('counter-value').textContent = counter;
+        }
+    </script>
+
+    <!-- 4. Counter with getter and setter -->
+    <p id="counter-value-get-set">0</p>
+    <script>
+        let counterGetSet = {
+            _value: 0,
+            get value() {
+                return this._value;
+            },
+            set value(newValue) {
+                this._value = newValue;
+                document.getElementById('counter-value-get-set').textContent = newValue;
+            }
+        };
+
+        // Increment counter using setter
+        function incrementCounterGetSet() {
+            counterGetSet.value++;
+        }
+    </script>
+
+    <!-- 5. Add properties to existing function using prototypes -->
+    <script>
+        function Vehicle(make, model, year) {
+            this.make = make;
+            this.model = model;
+            this.year = year;
+        }
+
+        // Add a new property using prototype
+        Vehicle.prototype.info = function() {
+            return `This ${this.year} ${this.make} ${this.model} is a vehicle.`;
+        };
+
+        // Create an instance of Vehicle
+        let car = new Vehicle('Toyota', 'Camry', 2020);
+        console.log(car.info()); // Output: This 2020 Toyota Camry is a vehicle.
+    </script>
+</body>
+</html>
