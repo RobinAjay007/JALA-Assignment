@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Basics</title>
+</head>
+<body>
+
+<!-- Output area for Program 2 -->
+<div id="output2"></div>
+<button onclick="sortFruits()">Sort Fruits</button>
+<!-- Output area for Program 3 -->
+<div id="output3"></div>
+
+<!-- Output area for Program 4 -->
+<div id="output4"></div>
+
+<!-- Output area for Program 5 -->
+<div id="output5"></div>
+
+<!-- Output area for Program 6 -->
+<div id="output6"></div>
+
+<script>
+    // Program 2: Sorting array in descending order
+    function sortFruits() {
+        var fruits = ['Apple', 'Banana', 'Orange', 'Grapes'];
+        fruits.sort((a, b) => b.localeCompare(a)); // Sorting in descending order
+        document.getElementById('output2').innerText = 'Sorted Fruits: ' + fruits.join(', ');
+    }
+    // Automatically invoke the function to display the output
+
+    // Program 3: FOR/IN loop
+    var person = {
+        firstname: 'John',
+        lastname: 'Doe'
+    };
+    var output3 = '';
+    for (var key in person) {
+        output3 += key + ': ' + person[key] + '<br>';
+    }
+    document.getElementById('output3').innerHTML = output3;
+
+    // Program 4: Object properties access
+    var output4 = '';
+    output4 += 'First Name: ' + person.firstname + '<br>';
+    output4 += 'Last Name: ' + person['lastname'];
+    document.getElementById('output4').innerHTML = output4;
+
+    // Program 5: Variable hoisting
+    var output5 = 'Variable Hoisting Output: ' + x;
+    document.getElementById('output5').innerText = output5;
+
+    // Program 6: Strict mode
+    'use strict';
+    var output6 = '';
+    try {
+        y = 10; // Throws an error because y is not declared
+        output6 = 'Variable y value: ' + y; // This line will not be reached
+    } catch (error) {
+        output6 = 'Error: ' + error.message;
+    }
+    document.getElementById('output6').innerText = output6;
+</script>
+
+</body>
+</html>
